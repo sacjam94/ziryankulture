@@ -187,12 +187,19 @@ document.addEventListener('DOMContentLoaded', () => {
         
         animateParticles();
     }
+<<<<<<< HEAD
 
     // Parallax effect for video background
-    const heroSection = document.getElementById('heroSection');
-    const videoLayer = document.getElementById('videoLayer');
+=======
     
-    if (heroSection && videoLayer) {
+    // Parallax effect for 3D frames
+>>>>>>> a4ec989718a7b9d4b30ef3b831c30980c3854bd8
+    const heroSection = document.getElementById('heroSection');
+    const centerFrame = document.querySelector('.center-frame');
+    const leftFrame = document.querySelector('.left-frame');
+    const rightFrame = document.querySelector('.right-frame');
+    
+    if (heroSection && centerFrame && leftFrame && rightFrame) {
         heroSection.addEventListener('mousemove', (e) => {
             const rect = heroSection.getBoundingClientRect();
             const x = e.clientX - rect.left;
@@ -201,15 +208,40 @@ document.addEventListener('DOMContentLoaded', () => {
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
             
-            // Move opposite to mouse for parallax depth effect
-            const moveX = ((centerX - x) / centerX) * 20;
-            const moveY = ((centerY - y) / centerY) * 20;
+            // Calculate movement percentages (-1 to 1)
+            const moveX = (x - centerX) / centerX;
+            const moveY = (y - centerY) / centerY;
             
-            videoLayer.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            // Apply 3D transforms with different intensities for depth
+            centerFrame.style.transform = `translate(${moveX * -10}px, calc(-20px + ${moveY * -10}px)) perspective(1000px) rotateY(${moveX * 5}deg) rotateX(${moveY * -5}deg)`;
+            
+            // Side frames move more for parallax depth
+            leftFrame.style.transform = `rotate(-8deg) translate(${moveX * 30}px, ${moveY * 30}px) perspective(1000px) rotateY(${moveX * 15}deg)`;
+            
+            rightFrame.style.transform = `rotate(12deg) translate(${moveX * -25}px, ${moveY * -25}px) perspective(1000px) rotateY(${moveX * 15}deg)`;
         });
         
         heroSection.addEventListener('mouseleave', () => {
-            videoLayer.style.transform = `translate(0px, 0px)`;
+            // Reset transforms with smooth transitions
+            centerFrame.style.transition = 'transform 0.5s ease';
+            leftFrame.style.transition = 'transform 0.5s ease';
+            rightFrame.style.transition = 'transform 0.5s ease';
+            
+            centerFrame.style.transform = `translate(0px, -20px) perspective(1000px) rotateY(0deg) rotateX(0deg)`;
+            leftFrame.style.transform = `rotate(-8deg) translate(0px, 0px) perspective(1000px) rotateY(0deg)`;
+            rightFrame.style.transform = `rotate(12deg) translate(0px, 0px) perspective(1000px) rotateY(0deg)`;
+            
+            // Remove transition after reset so mousemove is snappy
+            setTimeout(() => {
+                if(centerFrame) centerFrame.style.transition = 'none';
+                if(leftFrame) leftFrame.style.transition = 'none';
+                if(rightFrame) rightFrame.style.transition = 'none';
+            }, 500);
         });
+        
+        // Ensure snappy movement initially
+        centerFrame.style.transition = 'none';
+        leftFrame.style.transition = 'none';
+        rightFrame.style.transition = 'none';
     }
 });
