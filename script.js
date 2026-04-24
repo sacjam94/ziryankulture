@@ -187,13 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         animateParticles();
     }
-<<<<<<< HEAD
-
-    // Parallax effect for video background
-=======
-    
     // Parallax effect for 3D frames
->>>>>>> a4ec989718a7b9d4b30ef3b831c30980c3854bd8
     const heroSection = document.getElementById('heroSection');
     const centerFrame = document.querySelector('.center-frame');
     const leftFrame = document.querySelector('.left-frame');
