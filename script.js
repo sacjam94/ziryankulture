@@ -22,6 +22,17 @@ document.addEventListener('DOMContentLoaded', () => {
         revealOnScroll.observe(reveal);
     });
 
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+
     // Spice Particle System (Authentic Ingredients)
     const canvas = document.getElementById('spiceParticles');
     if (canvas) {

@@ -5,229 +5,336 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ziryan Kulture | Taste the Tradition</title>
     <meta name="description" content="Ziryan Kulture offers traditional Kerala food products including the signature Idi Irachi, premium pickles, and more. Taste the tradition.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <header>
-        <div class="logo">Ziryan<span>Kulture</span></div>
-        <div class="tagline">Taste the Tradition</div>
-    </header>
+    <!-- NAV -->
+    <nav id="navbar">
+        <div class="nav-logo">Ziryan Kulture</div>
+        <ul class="nav-links">
+            <li><a href="#story">Our Story</a></li>
+            <li><a href="#collection">Collection</a></li>
+            <li><a href="#craft">Craft</a></li>
+            <li><a href="#philosophy">Philosophy</a></li>
+        </ul>
+        <a href="https://wa.me/916238389280" class="nav-cta" target="_blank">Order Now</a>
+    </nav>
 
-    <main>
-
-        <!-- Hero Section -->
-        <section class="hero" id="heroSection">
-            <!-- 3D Full Screen Background Container -->
-            <div class="video-background-container" id="videoContainer">
-                <div class="video-parallax-layer" id="videoLayer">
-                    <!-- The main image of the old lady pounding spices -->
-                    <img src="images/lady_pounding.jpg" alt="Traditional pounding" class="bg-image-fallback" style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <!-- 3D Splash Particles Canvas -->
-                <canvas id="spiceParticles" class="spice-canvas"></canvas>
-                <div class="video-overlay"></div>
-            </div>
-            
-            <div class="hero-content reveal" style="z-index: 10;">
-                <h1>Taste the <br><span>Tradition.</span></h1>
-                <p>Discover the authentic taste of Kerala with our signature Idi Irachi (Unakka Irachi) and other premium delicacies. Slowly pounded, richly spiced, and perfected over generations.</p>
-                <a href="#products" class="btn">Explore Products</a>
-            </div>
-        </section>
-
-        <!-- Idi Irachi Details Section -->
-        <section class="ingredients-section reveal">
-            <h2>The Secret of Idi Irachi</h2>
-            <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto;">Our Idi Irachi is made from pounded, dried, and spiced premium buffalo meat. A perfect blend of traditional spices ensures every bite is packed with fiery, authentic flavor.</p>
-            
-            <div class="ingredients-list">
-                <span class="ingredient-tag">Buffalo meat</span>
-                <span class="ingredient-tag">Green chilli</span>
-                <span class="ingredient-tag">Garlic & Ginger</span>
-                <span class="ingredient-tag">Coconut oil</span>
-                <span class="ingredient-tag">Black pepper</span>
-                <span class="ingredient-tag">Kashmiri chilli</span>
-                <span class="ingredient-tag">Curry leaves</span>
-                <span class="ingredient-tag">Garam masala</span>
-                <span class="ingredient-tag">Turmeric</span>
-            </div>
-        </section>
+    <!-- HERO -->
+    <section id="heroSection">
+        <div class="hero-bg-container">
+            <div class="hero-bg-image" style="background-image: url('images/lady_pounding.jpg');"></div>
+        </div>
+        <!-- 3D Splash Particles Canvas -->
+        <canvas id="spiceParticles" class="spice-canvas"></canvas>
+        <div class="hero-overlay"></div>
         
-        <!-- Brand Narrative Section -->
-        <section class="narrative-section reveal">
-            <div class="narrative-container">
-                <div class="narrative-intro">
-                    <p class="brand-focus">Focusing exclusively on <span>The Ziryan Kulture</span> allows us to build a powerful, single-minded brand identity that feels like a "premium heritage experience" rather than just a food product.</p>
-                    <p class="brand-philosophy">In the world of "Quiet Luxury," we don't "sell" — we "invite."</p>
-                </div>
+        <div class="hero-content">
+            <p class="hero-eyebrow">Kottayam · Kerala · Est. Heritage</p>
+            <h1 class="hero-title">Ziryan<br><em>Kulture</em></h1>
+            <p class="hero-sub">A quiet luxury of Kerala's living heritage. Preserved in tradition. Refined for the world.</p>
+            <a href="#collection" class="btn-primary">Explore Collection</a>
+            <a href="#story" class="btn-outline">Our Story</a>
+        </div>
 
-                <div class="narrative-content">
-                    <h2 class="narrative-title">The Artisanal Narrative</h2>
-                    <p>Instead of tying products to specific communities, the brand highlights the geographic and historical techniques of the Kottayam and Pala belts. It celebrates the collective wisdom of generations who perfected the art of sun-drying, pan-drying, and spice-blending, treating these methods as a shared regional treasure.</p>
-                </div>
+        <div class="hero-scroll">
+            <div class="scroll-line"></div>
+            <span>Scroll</span>
+        </div>
+    </section>
 
-                <div class="milestones-grid">
-                    <div class="milestone-item">
-                        <h3>Traditional Preservation</h3>
-                        <p>Specializing in heritage products like Ediyirachi (pan-dried buffalo meat), pickles, and sun-dried items.</p>
-                    </div>
-                    <div class="milestone-item">
-                        <h3>Aesthetic Philosophy</h3>
-                        <p>Adopting a "Quiet Luxury" and "Modern Vintage" design language. This involves high-contrast typography and minimalist packaging that contrasts with the rustic, homemade nature of the products.</p>
-                    </div>
-                    <div class="milestone-item">
-                        <h3>Cultural Preservation</h3>
-                        <p>Focusing on cultural heritage through a clean, minimalist lens, moving beyond specific iconography to celebrate the broader artisanal history of the region.</p>
-                    </div>
-                </div>
+    <!-- MARQUEE -->
+    <div class="marquee-band">
+        <div class="marquee-track">
+            <span>Kottayam Heritage</span><span class="dot">·</span>
+            <span>Ancestral Recipes</span><span class="dot">·</span>
+            <span>Pan-Dried Traditions</span><span class="dot">·</span>
+            <span>Kerala Spice Craft</span><span class="dot">·</span>
+            <span>Pala Valley Flavours</span><span class="dot">·</span>
+            <span>Sun-Dried Excellence</span><span class="dot">·</span>
+            <span>Kottayam Heritage</span><span class="dot">·</span>
+            <span>Ancestral Recipes</span><span class="dot">·</span>
+            <span>Pan-Dried Traditions</span><span class="dot">·</span>
+            <span>Kerala Spice Craft</span><span class="dot">·</span>
+            <span>Pala Valley Flavours</span><span class="dot">·</span>
+            <span>Sun-Dried Excellence</span><span class="dot">·</span>
+        </div>
+    </div>
 
-                <div class="narrative-footer">
-                    <p>The Ziryan Kulture approaches heritage not as a static artifact, but as a living, breathing craft. By moving beyond specific social identifiers, the brand centers its identity on the universal artistry of the Kerala region.</p>
+    <!-- STORY -->
+    <section id="story">
+        <div class="story-visual reveal">
+            <img class="story-img" src="images/lady_pounding.jpg" alt="Traditional Kerala kitchen craftsmanship">
+            <div class="story-frame"></div>
+            <div class="story-badge">
+                <span>100%</span>
+                <small>Artisan<br>Made</small>
+            </div>
+        </div>
+        <div class="story-text">
+            <p class="section-label reveal">The Artisanal Narrative</p>
+            <h2 class="section-title reveal">Where <em>Memory</em><br>Becomes a Meal</h2>
+            <p class="story-quote reveal">"We do not sell tradition.<br>We preserve its soul."</p>
+            <p class="reveal">Born in the misty highlands of Kottayam and the valleys of Pala, Ziryan Kulture is not a brand — it is a living inheritance. Every product carries within it the patience of a generation that understood the sacred relationship between fire, spice, and time.</p>
+            <p class="reveal">Our techniques are not recipes. They are rituals — sun-drying under Kerala's golden afternoon light, pan-drying over wood-flame embers, spice blending by hand in the old way, where measurement is memory and precision is feeling.</p>
+            <div class="pillars">
+                <div class="pillar reveal reveal-delay-1">
+                    <div class="pillar-num">01</div>
+                    <div class="pillar-name">Traditional Preservation</div>
+                    <div class="pillar-desc">Ancestral methods unchanged for generations</div>
+                </div>
+                <div class="pillar reveal reveal-delay-2">
+                    <div class="pillar-num">02</div>
+                    <div class="pillar-name">Aesthetic Philosophy</div>
+                    <div class="pillar-desc">Restraint, beauty, and intentional craft</div>
+                </div>
+                <div class="pillar reveal reveal-delay-3">
+                    <div class="pillar-num">03</div>
+                    <div class="pillar-name">Cultural Preservation</div>
+                    <div class="pillar-desc">Keeping Kerala's culinary identity alive</div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-
-        <!-- Products Section -->
-        <section id="products" class="products-section">
-            <div class="section-header reveal">
-                <h2>Our Premium Products</h2>
-                <p>Handcrafted with love and authentic spices.</p>
+    <!-- HERO PRODUCT -->
+    <section id="hero-product">
+        <img class="hero-product-img" src="images/buffalo_ediyirachi_1777025646482.png" alt="Buffalo Ediyirachi">
+        <div class="hero-product-text">
+            <p class="product-origin reveal">Signature · Heritage Collection</p>
+            <h2 class="section-title reveal">Buffalo<br><em>Ediyirachi</em></h2>
+            <p class="hero-product-desc reveal">Our most celebrated heritage preparation. Slow-cooked buffalo meat, pan-dried to perfection over seasoned iron, tossed with coconut slivers, flame-roasted spices, and the wild fragrance of curry leaves. A memory in every fibre.</p>
+            <div class="product-price reveal">₹350</div>
+            <p class="product-weight reveal">100g · Pan-Dried · Heritage Recipe</p>
+            <div class="product-actions reveal">
+                <a href="https://wa.me/916238389280?text=Hi, I'd like to order Buffalo Ediyirachi" class="btn-primary" target="_blank">Order via WhatsApp</a>
+                <a href="#collection" class="btn-outline">View All</a>
             </div>
+        </div>
+    </section>
 
-            <div class="products-grid">
-                
-                <!-- Product 1 -->
-                <article class="product-card reveal">
-                    <div class="product-img-wrapper">
-                        <img src="images/prawns_dry_fry_1777025632760.png" alt="Prawns Dry Fry" class="product-img">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Prawns Dry Fry</h3>
-                        <div class="product-meta">
-                            <span class="product-weight">100g</span>
-                            <span class="product-price">310</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Product 2 -->
-                <article class="product-card reveal">
-                    <div class="product-img-wrapper">
-                        <img src="images/buffalo_ediyirachi_1777025646482.png" alt="Buffalo Ediyirachi" class="product-img">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Buffalo Ediyirachi</h3>
-                        <div class="product-meta">
-                            <span class="product-weight">100g</span>
-                            <span class="product-price">350</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Product 3 -->
-                <article class="product-card reveal">
-                    <div class="product-img-wrapper">
-                        <img src="images/buffalo_kanthari_1777025677423.png" alt="Buffalo Kanthari Ediyirachi" class="product-img">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Buffalo Kanthari Ediyirachi</h3>
-                        <div class="product-meta">
-                            <span class="product-weight">100g</span>
-                            <span class="product-price">390</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Product 4 -->
-                <article class="product-card reveal">
-                    <div class="product-img-wrapper">
-                        <img src="images/chicken_ediyirachi_1777025698737.png" alt="Chicken Ediyirachi" class="product-img">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Chicken Ediyirachi</h3>
-                        <div class="product-meta">
-                            <span class="product-weight">100g</span>
-                            <span class="product-price">275</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Product 5 -->
-                <article class="product-card reveal">
-                    <div class="product-img-wrapper">
-                        <img src="images/prawns_pickle_1777025716563.png" alt="Prawns pickle" class="product-img">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Prawns Pickle</h3>
-                        <div class="product-meta">
-                            <span class="product-weight">200g</span>
-                            <span class="product-price">399</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Product 6 -->
-                <article class="product-card reveal">
-                    <div class="product-img-wrapper">
-                        <img src="images/citrus_pickle_red_1777025751917.png" alt="Citrus pickle red" class="product-img">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Citrus Pickle Red</h3>
-                        <div class="product-meta">
-                            <span class="product-weight">200g</span>
-                            <span class="product-price">259</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Product 7 -->
-                <article class="product-card reveal">
-                    <div class="product-img-wrapper">
-                        <!-- Using red pickle as placeholder due to AI limit, applied CSS filter -->
-                        <img src="images/citrus_pickle_red_1777025751917.png" alt="Citrus pickle white" class="product-img placeholder-img">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Citrus Pickle White</h3>
-                        <div class="product-meta">
-                            <span class="product-weight">225g</span>
-                            <span class="product-price">269</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Product 8 -->
-                <article class="product-card reveal">
-                    <div class="product-img-wrapper">
-                        <!-- Using ediyirachi as placeholder due to AI limit, applied CSS filter -->
-                        <img src="images/buffalo_ediyirachi_1777025646482.png" alt="Dried mango pickle" class="product-img placeholder-img-2">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Dried Mango Pickle</h3>
-                        <div class="product-meta">
-                            <span class="product-weight">200g</span>
-                            <span class="product-price">264</span>
-                        </div>
-                    </div>
-                </article>
-
+    <!-- COLLECTION -->
+    <section id="collection">
+        <div class="collection-header reveal">
+            <div>
+                <p class="section-label">The Collection</p>
+                <h2 class="section-title">Curated from<br><em>Kerala's Pantry</em></h2>
             </div>
-        </section>
-    </main>
+            <p style="font-size:0.8rem;color:var(--muted);max-width:280px;line-height:1.8;text-align:right;">Each preparation is a limited craft edition — made in small batches, packed with care.</p>
+        </div>
 
+        <p class="collection-category reveal">Dry & Meat Collection</p>
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card reveal reveal-delay-1">
+                <img class="product-card-img" src="images/prawns_dry_fry_1777025632760.png" alt="Prawns Dry Fry">
+                <div class="product-card-body">
+                    <div class="product-card-name">Prawns Dry Fry</div>
+                    <div class="product-card-weight">100g · Sun-Dried</div>
+                    <div class="product-card-footer">
+                        <div class="product-card-price">₹310</div>
+                        <a href="https://wa.me/916238389280?text=Hi, I'd like to order Prawns Dry Fry" class="add-btn" target="_blank">+</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-card reveal reveal-delay-2">
+                <img class="product-card-img" src="images/buffalo_ediyirachi_1777025646482.png" alt="Buffalo Ediyirachi">
+                <div class="product-card-body">
+                    <div class="product-card-name">Buffalo Ediyirachi</div>
+                    <div class="product-card-weight">100g · Pan-Dried</div>
+                    <div class="product-card-footer">
+                        <div class="product-card-price">₹350</div>
+                        <a href="https://wa.me/916238389280?text=Hi, I'd like to order Buffalo Ediyirachi" class="add-btn" target="_blank">+</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-card reveal reveal-delay-3">
+                <img class="product-card-img" src="images/buffalo_kanthari_1777025677423.png" alt="Buffalo Kanthari Ediyirachi">
+                <div class="product-card-body">
+                    <div class="product-card-name">Buffalo Kanthari</div>
+                    <div class="product-card-weight">100g · Kanthari Chilli</div>
+                    <div class="product-card-footer">
+                        <div class="product-card-price">₹390</div>
+                        <a href="https://wa.me/916238389280?text=Hi, I'd like to order Buffalo Kanthari Ediyirachi" class="add-btn" target="_blank">+</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 4 -->
+            <div class="product-card reveal reveal-delay-4">
+                <img class="product-card-img" src="images/chicken_ediyirachi_1777025698737.png" alt="Chicken Ediyirachi">
+                <div class="product-card-body">
+                    <div class="product-card-name">Chicken Ediyirachi</div>
+                    <div class="product-card-weight">100g · Shredded</div>
+                    <div class="product-card-footer">
+                        <div class="product-card-price">₹275</div>
+                        <a href="https://wa.me/916238389280?text=Hi, I'd like to order Chicken Ediyirachi" class="add-btn" target="_blank">+</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p class="collection-category reveal">Pickles & Preserves</p>
+        <div class="product-grid">
+            <!-- Product 5 -->
+            <div class="product-card reveal reveal-delay-1">
+                <img class="product-card-img" src="images/prawns_pickle_1777025716563.png" alt="Prawns Pickle">
+                <div class="product-card-body">
+                    <div class="product-card-name">Prawns Pickle</div>
+                    <div class="product-card-weight">200g · Spicy & Aromatic</div>
+                    <div class="product-card-footer">
+                        <div class="product-card-price">₹399</div>
+                        <a href="https://wa.me/916238389280?text=Hi, I'd like to order Prawns Pickle" class="add-btn" target="_blank">+</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 6 -->
+            <div class="product-card reveal reveal-delay-2">
+                <img class="product-card-img" src="images/citrus_pickle_red_1777025751917.png" alt="Citrus Pickle Red">
+                <div class="product-card-body">
+                    <div class="product-card-name">Citrus Pickle Red</div>
+                    <div class="product-card-weight">200g · Traditional</div>
+                    <div class="product-card-footer">
+                        <div class="product-card-price">₹259</div>
+                        <a href="https://wa.me/916238389280?text=Hi, I'd like to order Citrus Pickle Red" class="add-btn" target="_blank">+</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 7 -->
+            <div class="product-card reveal reveal-delay-3">
+                <div class="product-card-placeholder">
+                    <span>ZK</span>
+                </div>
+                <div class="product-card-body">
+                    <div class="product-card-name">Citrus Pickle White</div>
+                    <div class="product-card-weight">225g · Mild & Fragrant</div>
+                    <div class="product-card-footer">
+                        <div class="product-card-price">₹269</div>
+                        <a href="https://wa.me/916238389280?text=Hi, I'd like to order Citrus Pickle White" class="add-btn" target="_blank">+</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 8 -->
+            <div class="product-card reveal reveal-delay-4">
+                <div class="product-card-placeholder">
+                    <span>ZK</span>
+                </div>
+                <div class="product-card-body">
+                    <div class="product-card-name">Dried Mango Pickle</div>
+                    <div class="product-card-weight">200g · Sun-Dried</div>
+                    <div class="product-card-footer">
+                        <div class="product-card-price">₹264</div>
+                        <a href="https://wa.me/916238389280?text=Hi, I'd like to order Dried Mango Pickle" class="add-btn" target="_blank">+</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CRAFT -->
+    <section id="craft">
+        <div class="craft-text">
+            <p class="section-label reveal">The Methods</p>
+            <h2 class="section-title reveal">Craft Before<br><em>Commerce</em></h2>
+            <div class="craft-methods">
+                <div class="craft-method reveal reveal-delay-1">
+                    <div class="craft-icon">☀</div>
+                    <div>
+                        <div class="craft-method-name">Sun-Drying</div>
+                        <div class="craft-method-desc">Laid under Kerala's afternoon sun for days, our meats and pickles develop a depth of flavour that no machine can replicate. Time is the ingredient.</div>
+                    </div>
+                </div>
+                <div class="craft-method reveal reveal-delay-2">
+                    <div class="craft-icon">♨</div>
+                    <div>
+                        <div class="craft-method-name">Pan-Drying</div>
+                        <div class="craft-method-desc">Over seasoned iron kadhais on wood flame, meats are stirred with patience until they attain a texture that is at once crisp and tender — the mark of a practiced hand.</div>
+                    </div>
+                </div>
+                <div class="craft-method reveal reveal-delay-3">
+                    <div class="craft-icon">✦</div>
+                    <div>
+                        <div class="craft-method-name">Spice Blending</div>
+                        <div class="craft-method-desc">Whole spices roasted dry, then ground by hand. No commercial powders. No shortcuts. Each blend is a formulation passed down through kitchens, not written down — only lived.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="craft-visual">
+            <img src="images/lady_pounding.jpg" alt="Traditional Kerala spice crafting">
+        </div>
+    </section>
+
+    <!-- PHILOSOPHY -->
+    <section id="philosophy">
+        <p class="section-label" style="justify-content:center;"><span></span>Brand Philosophy</p>
+        <h2 class="philosophy-title reveal">Rooted in <em>Kerala</em>,<br>Refined for the World</h2>
+        <div class="philosophy-statements">
+            <div class="philosophy-item reveal reveal-delay-1">
+                <p>Heritage is a living craft.</p>
+            </div>
+            <div class="philosophy-item reveal reveal-delay-2">
+                <p>Minimalism meets memory.</p>
+            </div>
+            <div class="philosophy-item reveal reveal-delay-3">
+                <p>Taste the tradition. Feel the silence of it.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta">
+        <p class="section-label reveal">Experience Ziryan Kulture</p>
+        <h2 class="cta-title reveal">Begin Your<br><em>Heritage Journey</em></h2>
+        <p class="cta-sub reveal">Small batches. Pure craft. Delivered to your door.</p>
+        <div class="cta-actions reveal">
+            <a href="#collection" class="btn-primary">Shop the Collection</a>
+            <a href="https://wa.me/916238389280?text=Hi, I'd like to know more about Ziryan Kulture" class="btn-whatsapp" target="_blank">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                WhatsApp Us
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 Ziryan Kulture. Taste the Tradition. All rights reserved.</p>
+        <div class="footer-top">
+            <div>
+                <div class="footer-brand-name">Ziryan Kulture</div>
+                <div class="footer-tagline">Taste the Tradition</div>
+                <div class="footer-desc">Artisanal preserved meats and pickles from the heart of Kottayam, Kerala. Made with ancestral methods, offered with quiet pride.</div>
+            </div>
+            <div>
+                <div class="footer-col-title">Navigate</div>
+                <ul class="footer-links">
+                    <li><a href="#story">Our Story</a></li>
+                    <li><a href="#collection">Collection</a></li>
+                    <li><a href="#craft">Craftsmanship</a></li>
+                    <li><a href="#philosophy">Philosophy</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-col-title">Contact</div>
+                <ul class="footer-links">
+                    <li><a href="https://wa.me/916238389280" target="_blank">WhatsApp Order</a></li>
+                    <li><a href="mailto:hello@ziryankulture.com">hello@ziryankulture.com</a></li>
+                    <li><a href="#">Kottayam, Kerala</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-copy">© 2026 Ziryan Kulture. All rights reserved. Crafted with heritage.</div>
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="https://wa.me/916238389280">WhatsApp</a>
+            </div>
+        </div>
     </footer>
-
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/916238389280" class="whatsapp-float" target="_blank">
-        <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-        <span>Order on WhatsApp</span>
-    </a>
-
 
     <script src="script.js"></script>
 </body>
