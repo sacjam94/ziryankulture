@@ -65,28 +65,98 @@ header {
     font-family: 'Playfair Display', serif;
 }
 
-/* Hero Section - Poster Layout */
-.poster-hero {
+/* Hero Section */
+.hero {
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     align-items: center;
+    padding: 0 5%;
     position: relative;
-    padding: 100px 5% 50px;
-    overflow: hidden;
-    text-align: center;
+    padding-top: 80px;
 }
 
-.poster-overlay {
+.hero-content {
+    flex: 1;
+    z-index: 2;
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.hero h1 span {
+    color: var(--primary);
+    display: block;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background-color: var(--primary);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+}
+
+.btn:hover {
+    background-color: var(--primary-light);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(194, 65, 12, 0.3);
+}
+
+.video-background-container {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* Dark background matching the poster with subtle center glow */
-    background: radial-gradient(circle at center, #290d05 0%, #0a0402 70%);
+    overflow: hidden;
     z-index: 1;
+}
+
+.video-parallax-layer {
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    transition: transform 0.1s ease-out;
+}
+
+.bg-video, .bg-image-fallback {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: kenBurnsIntro 20s infinite alternate ease-in-out;
+}
+
+/* Add a subtle dark/firey tint to the video/image to make the spices pop */
+.video-parallax-layer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(194, 65, 12, 0.2) 0%, rgba(15, 10, 10, 0.6) 80%);
+    z-index: 2;
 }
 
 .spice-canvas {
@@ -96,179 +166,22 @@ header {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: 5; /* Particles should float above everything */
-}
-
-.poster-header-content {
-    position: relative;
-    z-index: 4;
-    max-width: 800px;
-    margin-bottom: 30px;
-}
-
-.poster-subtitle {
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--text-main);
-    display: block;
-    margin-bottom: 10px;
-}
-
-.poster-title {
-    font-size: 5.5rem;
-    line-height: 1;
-    margin-bottom: 10px;
-    color: white;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.8);
-}
-
-.poster-title span {
-    color: white;
-}
-
-.poster-tagline {
-    font-size: 1.2rem;
-    color: #e5e5e5;
-    font-weight: 300;
-}
-
-/* 3D Collage Frames */
-.collage-container {
-    position: relative;
     z-index: 3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    flex: 1;
-    min-height: 450px;
-    margin: 20px 0;
 }
 
-.frame {
-    background: white;
-    padding: 10px;
-    padding-bottom: 40px; /* Polaroid style */
-    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+.video-overlay {
     position: absolute;
-    transition: transform 0.3s ease;
-}
-
-.frame img, .frame video {
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    background: #111;
-}
-
-.center-frame {
-    width: 400px;
-    height: 450px;
-    z-index: 2;
-    transform: translateY(-20px);
-    padding: 15px;
-    padding-bottom: 15px; /* Standard frame for center */
-}
-
-.left-frame {
-    width: 320px;
-    height: 420px;
-    z-index: 3;
-    left: 50%;
-    margin-left: -450px;
-    transform: rotate(-8deg);
-}
-
-.right-frame {
-    width: 320px;
-    height: 420px;
-    z-index: 3;
-    right: 50%;
-    margin-right: -450px;
-    transform: rotate(12deg);
-}
-
-.poster-footer-content {
-    position: relative;
+    background: linear-gradient(to right, rgba(15, 10, 10, 0.95) 0%, rgba(15, 10, 10, 0.6) 50%, rgba(15, 10, 10, 0.3) 100%);
     z-index: 4;
-    width: 100%;
-    max-width: 1000px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    margin-top: 40px;
 }
 
-.footer-tags {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    width: 100%;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-    padding-bottom: 20px;
-}
-
-.tag {
-    font-size: 1.1rem;
-    font-weight: 500;
-    letter-spacing: 1px;
-}
-
-.divider {
-    height: 40px;
-    width: 1px;
-    background-color: rgba(255,255,255,0.4);
-}
-
-.brand-badge {
-    font-size: 1.8rem;
-    font-family: 'Playfair Display', serif;
-    font-weight: 800;
-    line-height: 1;
-    text-transform: uppercase;
-}
-
-.brand-badge span {
-    font-size: 1.2rem;
-}
-
-.bottom-bar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
-.highlight-pill {
-    background: linear-gradient(90deg, #6d28d9, #9333ea, #6d28d9);
-    padding: 10px 30px;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-    box-shadow: 0 4px 15px rgba(109, 40, 217, 0.4);
-}
-
-.crafted-text {
-    font-size: 0.9rem;
-    color: #a3a3a3;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.explore-btn {
-    margin-top: 10px;
-    background: transparent;
-    border: 2px solid white;
-}
-
-.explore-btn:hover {
-    background: white;
-    color: var(--dark-bg);
+@keyframes kenBurnsIntro {
+    0% { transform: scale(1) translateZ(0); }
+    100% { transform: scale(1.08) translateZ(30px); }
 }
 
 /* Ingredients Section */
@@ -413,6 +326,110 @@ header {
     margin-right: 2px;
 }
 
+/* Narrative Section */
+.narrative-section {
+    padding: 8rem 5%;
+    background-color: var(--dark-bg);
+    position: relative;
+}
+
+.narrative-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.narrative-intro {
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+.brand-focus {
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1.4;
+    margin-bottom: 2rem;
+    color: var(--text-main);
+}
+
+.brand-focus span {
+    color: var(--primary);
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.brand-philosophy {
+    font-size: 1.2rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 600;
+}
+
+.narrative-content {
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.narrative-title {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-main);
+    letter-spacing: -1px;
+}
+
+.narrative-content p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.milestones-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 5rem 0;
+}
+
+.milestone-item {
+    background: var(--dark-surface);
+    padding: 3rem 2rem;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: var(--transition);
+}
+
+.milestone-item:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+}
+
+.milestone-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+}
+
+.milestone-item p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.narrative-footer {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 4rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.narrative-footer p {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--text-muted);
+}
+
 /* Footer */
 footer {
     text-align: center;
@@ -478,42 +495,26 @@ footer p {
 
 /* Responsive */
 @media (max-width: 992px) {
-    .poster-hero {
+    .hero {
+        flex-direction: column;
+        text-align: center;
         padding-top: 120px;
     }
     
-    .poster-title {
-        font-size: 4rem;
+    .hero h1 {
+        font-size: 3.5rem;
     }
     
-    .collage-container {
-        transform: scale(0.75);
-        min-height: 350px;
+    .hero-image-wrapper {
+        margin-top: 3rem;
+        height: 400px;
+        width: 100%;
     }
 }
 
 @media (max-width: 768px) {
-    .poster-title {
+    .hero h1 {
         font-size: 2.8rem;
-    }
-    
-    .poster-tagline {
-        font-size: 1rem;
-    }
-    
-    .collage-container {
-        transform: scale(0.55);
-        min-height: 250px;
-    }
-    
-    .footer-tags {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .divider {
-        height: 1px;
-        width: 40px;
     }
     
     .products-grid {
