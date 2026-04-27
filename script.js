@@ -24,11 +24,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Navbar scroll effect
     const navbar = document.getElementById('navbar');
+    let ticking = false;
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+                ticking = false;
+            });
+            ticking = true;
         }
     });
 
@@ -159,13 +166,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 ctx.save();
                 ctx.translate(this.x, this.y);
                 ctx.rotate(this.angle);
-                ctx.globalAlpha = Math.max(0, this.opacity);
                 
-                // Depth of field blur for luxury feel
-                const blur = Math.abs(this.z - 1) * 3;
-                if (blur > 1) {
-                    ctx.filter = `blur(${blur}px)`;
-                }
+                // Optimize depth of field: remove expensive ctx.filter blur, use opacity instead
+                let alpha = Math.max(0, this.opacity);
+                if (this.z < 0.5) alpha *= 0.5; // Pseudo-depth for background particles
+                ctx.globalAlpha = alpha;
                 
                 ctx.drawImage(this.img, -this.size / 2, -this.size / 2, this.size, this.size);
                 ctx.restore();
@@ -182,16 +187,33 @@ document.addEventListener('DOMContentLoaded', () => {
         
         initParticles();
 
+        let animationId;
+        let isHeroVisible = true;
+
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                isHeroVisible = entry.isIntersecting;
+                if (isHeroVisible) {
+                    animate();
+                } else {
+                    cancelAnimationFrame(animationId);
+                }
+            });
+        }, { threshold: 0 });
+
+        heroObserver.observe(document.getElementById('heroSection'));
+
         function animate() {
+            if (!isHeroVisible) return;
             ctx.clearRect(0, 0, width, height);
             particles.forEach(p => {
                 p.update();
                 p.draw();
             });
-            requestAnimationFrame(animate);
+            animationId = requestAnimationFrame(animate);
         }
         
-        animate();
+        // Initial call is handled by the intersection observer triggering when page loads
     }
     
     // No parallax effect requested
